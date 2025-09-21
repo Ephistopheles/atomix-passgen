@@ -55,6 +55,35 @@ const PasswordGenerator: FC = () => {
     }
   };
 
+  const handleToggle = (
+    type: "upper" | "lower" | "number" | "symbol"
+  ): void => {
+    const totalChecked =
+      Number(includeUppercase) +
+      Number(includeLowercase) +
+      Number(includeNumbers) +
+      Number(includeSymbols);
+
+    switch (type) {
+      case "upper":
+        if (includeUppercase && totalChecked === 1) return;
+        setIncludeUppercase(!includeUppercase);
+        break;
+      case "lower":
+        if (includeLowercase && totalChecked === 1) return;
+        setIncludeLowercase(!includeLowercase);
+        break;
+      case "number":
+        if (includeNumbers && totalChecked === 1) return;
+        setIncludeNumbers(!includeNumbers);
+        break;
+      case "symbol":
+        if (includeSymbols && totalChecked === 1) return;
+        setIncludeSymbols(!includeSymbols);
+        break;
+    }
+  };
+
   useEffect((): void => {
     setPassword(generatePassword());
   }, [
@@ -66,9 +95,9 @@ const PasswordGenerator: FC = () => {
   ]);
 
   return (
-    <main className="flex items-center justify-center min-h-screen bg-white select-none relative px-4 sm:px-6">
+    <main className="flex items-center justify-center min-h-screen bg-gray-300 select-none relative px-4 sm:px-6">
       {showToast && (
-        <div className="absolute top-4 sm:top-6 left-1/2 -translate-x-1/2 bg-[#0352D1] text-white text-xs sm:text-sm px-3 sm:px-4 py-2 rounded-md shadow-md animate-fade-in-out">
+        <div className="absolute top-4 sm:top-6 left-1/2 -translate-x-1/2 bg-white text-gray-950 text-xs sm:text-sm px-3 sm:px-4 py-2 rounded-md shadow-md animate-fade-in-out">
           ✅ Contraseña copiada
         </div>
       )}
@@ -124,9 +153,7 @@ const PasswordGenerator: FC = () => {
               <input
                 type="checkbox"
                 checked={includeUppercase}
-                onChange={(e: ChangeEvent<HTMLInputElement>) =>
-                  setIncludeUppercase(e.target.checked)
-                }
+                onChange={() => handleToggle("upper")}
                 className="accent-[#0352D1]"
               />
               <span>Incluir mayúsculas (A–Z)</span>
@@ -135,9 +162,7 @@ const PasswordGenerator: FC = () => {
               <input
                 type="checkbox"
                 checked={includeLowercase}
-                onChange={(e: ChangeEvent<HTMLInputElement>) =>
-                  setIncludeLowercase(e.target.checked)
-                }
+                onChange={() => handleToggle("lower")}
                 className="accent-[#0352D1]"
               />
               <span>Incluir minúsculas (a–z)</span>
@@ -146,21 +171,16 @@ const PasswordGenerator: FC = () => {
               <input
                 type="checkbox"
                 checked={includeNumbers}
-                onChange={(e: ChangeEvent<HTMLInputElement>) =>
-                  setIncludeNumbers(e.target.checked)
-                }
+                onChange={() => handleToggle("number")}
                 className="accent-[#0352D1]"
               />
               <span>Incluir números (0–9)</span>
             </label>
-
             <label className="flex items-center gap-2 select-none">
               <input
                 type="checkbox"
                 checked={includeSymbols}
-                onChange={(e: ChangeEvent<HTMLInputElement>) =>
-                  setIncludeSymbols(e.target.checked)
-                }
+                onChange={() => handleToggle("symbol")}
                 className="accent-[#0352D1]"
               />
               <span>Incluir símbolos (!@#$%^&*)</span>

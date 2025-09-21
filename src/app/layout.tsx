@@ -9,7 +9,7 @@ const rubik = Rubik({
 });
 
 export const metadata: Metadata = {
-  title: "Generar contraseña | AtomixTools",
+  title: "PassGen | AtomixTools",
   description:
     "Generate strong and secure passwords instantly with AtomixTools.",
   keywords: [
@@ -26,6 +26,14 @@ export const metadata: Metadata = {
   authors: [{ name: "Johan Amed", url: "https://github.com/Ephistopheles" }],
   applicationName: "PassGen",
   generator: "Next.js",
+  icons: {
+    icon: [
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-64x64.png", sizes: "64x64", type: "image/png" },
+      { url: "/favicon-120x120.png", sizes: "120x120", type: "image/png" },
+    ],
+  },
 };
 
 const RootLayout = ({
