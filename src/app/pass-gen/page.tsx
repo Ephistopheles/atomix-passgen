@@ -1,5 +1,5 @@
-import PasswordGeneratorForm from "@/modules/passGen/components/PasswordGeneratorForm";
+import PasswordGenerator from "@/modules/passGen/components/PasswordGenerator";
 
-const PasswordGeneratorPage = () => <PasswordGeneratorForm />;
+const PasswordGeneratorPage = () => <PasswordGenerator />;
 
 export default PasswordGeneratorPage;

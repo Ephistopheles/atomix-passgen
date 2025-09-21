@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 
-const PasswordGeneratorForm = () => {
+const PasswordGenerator = () => {
   const [password, setPassword] = useState<string>("");
   const [length, setLength] = useState<number>(12);
   const [includeUppercase, setIncludeUppercase] = useState<boolean>(true);
@@ -175,4 +175,4 @@ const PasswordGeneratorForm = () => {
   );
 };
 
-export default PasswordGeneratorForm;
+export default PasswordGenerator;
