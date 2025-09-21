@@ -67,7 +67,6 @@ const PasswordGenerator: FC = () => {
 
   return (
     <main className="flex items-center justify-center min-h-screen bg-white select-none relative px-4 sm:px-6">
-      {/* Toast */}
       {showToast && (
         <div className="absolute top-4 sm:top-6 left-1/2 -translate-x-1/2 bg-[#0352D1] text-white text-xs sm:text-sm px-3 sm:px-4 py-2 rounded-md shadow-md animate-fade-in-out">
           ✅ Contraseña copiada
@@ -78,8 +77,6 @@ const PasswordGenerator: FC = () => {
         <h1 className="text-xl sm:text-2xl font-bold mb-4 text-center text-gray-800">
           Generador de contraseñas
         </h1>
-
-        {/* Input + generar */}
         <div className="flex flex-col sm:flex-row gap-2">
           <input
             type="text"
@@ -96,7 +93,6 @@ const PasswordGenerator: FC = () => {
             "
             placeholder="Contraseña generada"
           />
-
           <button
             type="button"
             onClick={() => setPassword(generatePassword())}
@@ -105,14 +101,10 @@ const PasswordGenerator: FC = () => {
             Generar
           </button>
         </div>
-
-        {/* Personalización */}
         <div className="mt-6 p-3 sm:p-4 border rounded-lg bg-gray-50">
           <h2 className="text-base sm:text-lg font-semibold mb-3 text-gray-800">
             Personalizar contraseña
           </h2>
-
-          {/* Longitud */}
           <div className="mb-4">
             <label className="block text-sm font-medium mb-1 text-gray-700">
               Longitud: {length}
@@ -128,8 +120,6 @@ const PasswordGenerator: FC = () => {
               className="w-full accent-[#0352D1]"
             />
           </div>
-
-          {/* Opciones */}
           <div className="space-y-2 text-gray-700 text-sm sm:text-base">
             <label className="flex items-center gap-2 select-none">
               <input
@@ -142,7 +132,6 @@ const PasswordGenerator: FC = () => {
               />
               <span>Incluir mayúsculas (A–Z)</span>
             </label>
-
             <label className="flex items-center gap-2 select-none">
               <input
                 type="checkbox"
@@ -154,7 +143,6 @@ const PasswordGenerator: FC = () => {
               />
               <span>Incluir minúsculas (a–z)</span>
             </label>
-
             <label className="flex items-center gap-2 select-none">
               <input
                 type="checkbox"

@@ -1,6 +1,7 @@
 # Atomix-passgen 🔑
 
-Secure and customizable password generator made with Next.js + Tailwind.
+Secure and customizable password generator built with Next.js + TailwindCSS.  
+Quickly generate strong passwords, copy them with one click, and customize length and character sets.
 
 ## Technologies
 
@@ -18,9 +19,11 @@ npm install
 npm run dev
 ```
 
-### Features
+Open http://localhost:3000 with your browser to see the app.
 
-- Generate secure passwords instantly
-- Copy password with one click
-- Customize password length
-- Include or exclude character types: uppercase, lowercase, numbers, symbols
+## Features
+
+- Generate secure passwords instantly.
+- Copy password with one click.
+- Customize password length.
+- Include or exclude character types: uppercase, lowercase, numbers, symbols.
