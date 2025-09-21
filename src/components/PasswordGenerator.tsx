@@ -95,7 +95,7 @@ const PasswordGenerator: FC = () => {
   ]);
 
   return (
-    <main className="flex items-center justify-center min-h-screen bg-gray-300 select-none relative px-4 sm:px-6">
+    <main className="flex items-center justify-center min-h-screen bg-gray-200 select-none relative px-4 sm:px-6">
       {showToast && (
         <div className="absolute top-4 sm:top-6 left-1/2 -translate-x-1/2 bg-white text-gray-950 text-xs sm:text-sm px-3 sm:px-4 py-2 rounded-md shadow-md animate-fade-in-out">
           ✅ Contraseña copiada
