@@ -72,7 +72,6 @@ const PasswordGenerator: FC = () => {
           ✅ Contraseña copiada
         </div>
       )}
-
       <section className="w-full max-w-md p-4 sm:p-6 bg-gray-100 rounded-xl shadow-[20px_5px_30px_rgba(0,0,0,0.4)] border border-gray-200">
         <h1 className="text-xl sm:text-2xl font-bold mb-4 text-center text-gray-800">
           Generador de contraseñas
