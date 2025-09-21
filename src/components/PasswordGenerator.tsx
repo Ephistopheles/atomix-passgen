@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, FC, ChangeEvent } from "react";
 
-const PasswordGenerator = () => {
+const PasswordGenerator: FC = () => {
   const [password, setPassword] = useState<string>("");
   const [length, setLength] = useState<number>(12);
   const [includeUppercase, setIncludeUppercase] = useState<boolean>(true);
@@ -11,7 +11,7 @@ const PasswordGenerator = () => {
   const [includeSymbols, setIncludeSymbols] = useState<boolean>(true);
   const [showToast, setShowToast] = useState<boolean>(false);
 
-  const generatePassword = () => {
+  const generatePassword = (): string => {
     const upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     const lower = "abcdefghijklmnopqrstuvwxyz";
     const numbers = "0123456789";
@@ -33,7 +33,7 @@ const PasswordGenerator = () => {
     return result;
   };
 
-  const handleCopy = () => {
+  const handleCopy = (): void => {
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(password).then(() => {
         setShowToast(true);
@@ -55,7 +55,7 @@ const PasswordGenerator = () => {
     }
   };
 
-  useEffect(() => {
+  useEffect((): void => {
     setPassword(generatePassword());
   }, [
     length,
@@ -122,7 +122,9 @@ const PasswordGenerator = () => {
               min="6"
               max="32"
               value={length}
-              onChange={(e) => setLength(Number(e.target.value))}
+              onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                setLength(Number(e.target.value))
+              }
               className="w-full accent-[#0352D1]"
             />
           </div>
@@ -133,7 +135,9 @@ const PasswordGenerator = () => {
               <input
                 type="checkbox"
                 checked={includeUppercase}
-                onChange={(e) => setIncludeUppercase(e.target.checked)}
+                onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                  setIncludeUppercase(e.target.checked)
+                }
                 className="accent-[#0352D1]"
               />
               <span>Incluir mayúsculas (A–Z)</span>
@@ -143,7 +147,9 @@ const PasswordGenerator = () => {
               <input
                 type="checkbox"
                 checked={includeLowercase}
-                onChange={(e) => setIncludeLowercase(e.target.checked)}
+                onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                  setIncludeLowercase(e.target.checked)
+                }
                 className="accent-[#0352D1]"
               />
               <span>Incluir minúsculas (a–z)</span>
@@ -153,7 +159,9 @@ const PasswordGenerator = () => {
               <input
                 type="checkbox"
                 checked={includeNumbers}
-                onChange={(e) => setIncludeNumbers(e.target.checked)}
+                onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                  setIncludeNumbers(e.target.checked)
+                }
                 className="accent-[#0352D1]"
               />
               <span>Incluir números (0–9)</span>
@@ -163,7 +171,9 @@ const PasswordGenerator = () => {
               <input
                 type="checkbox"
                 checked={includeSymbols}
-                onChange={(e) => setIncludeSymbols(e.target.checked)}
+                onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                  setIncludeSymbols(e.target.checked)
+                }
                 className="accent-[#0352D1]"
               />
               <span>Incluir símbolos (!@#$%^&*)</span>

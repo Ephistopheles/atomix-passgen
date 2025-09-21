@@ -1,5 +1,5 @@
-import { redirect } from "next/navigation";
+import PasswordGenerator from "@/components/PasswordGenerator";
 
-const RootPage = () => redirect("/pass-gen");
+const RootPage = () => <PasswordGenerator />;
 
 export default RootPage;

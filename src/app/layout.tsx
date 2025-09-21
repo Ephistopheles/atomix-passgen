@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Rubik } from "next/font/google";
-import "@/styles/global/global.css";
+import "@/styles/global.css";
 
 const rubik = Rubik({
   subsets: ["latin"],
@@ -9,10 +9,7 @@ const rubik = Rubik({
 });
 
 export const metadata: Metadata = {
-  title: {
-    default: "AtomixTools",
-    template: "%s | AtomixTools",
-  },
+  title: "Generar contraseña | AtomixTools",
   description:
     "Generate strong and secure passwords instantly with AtomixTools.",
   keywords: [
