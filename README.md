@@ -14,6 +14,7 @@ No tracking. No backend. No stored data.
 
 - Generate secure passwords instantly  
 - Custom password length (6–32 characters)  
+- Password Strength Indicator
 - Toggle uppercase letters (A–Z)  
 - Toggle lowercase letters (a–z)  
 - Toggle numbers (0–9)  
