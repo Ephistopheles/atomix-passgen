@@ -1,0 +1,61 @@
+---
+import "../styles/global.css";
+
+const {
+	title = "PassGen | AtomixTools",
+	description = "Generate strong and secure passwords instantly with AtomixTools.",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="antialiased">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+
+		<title>{title}</title>
+		<meta name="description" content={description} />
+
+		<meta
+			name="keywords"
+			content="password, generator, secure password, AtomixTools, contraseña, generador de contraseñas"
+		/>
+		<meta name="author" content="Johan Amed" />
+
+		<link
+			rel="icon"
+			href="/favicon-16x16.png"
+			sizes="16x16"
+			type="image/png"
+		/>
+		<link
+			rel="icon"
+			href="/favicon-32x32.png"
+			sizes="32x32"
+			type="image/png"
+		/>
+		<link
+			rel="icon"
+			href="/favicon-64x64.png"
+			sizes="64x64"
+			type="image/png"
+		/>
+		<link
+			rel="icon"
+			href="/favicon-120x120.png"
+			sizes="120x120"
+			type="image/png"
+		/>
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+
+	<body class="font-rubik bg-slate-900 text-white min-h-screen">
+		<slot />
+	</body>
+</html>
